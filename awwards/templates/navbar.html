@@ -1,0 +1,107 @@
+
+<!--Navbar-->
+
+
+<nav class="pl-5 pr-5 navbar navbar-expand-lg navbar-light bg-info sticky-top">
+  <div class="container-fluid">
+    <!-- Navbar brand -->
+    <a class="navbar-brand font-weight-bold title" href="{% url 'index' %}"style="font-size: 30px; font-weight:bold"><a href="{% url 'index' %}"><img src="https://fontmeme.com/permalink/211209/7584505c63cb13337285bc1b9e46831a.png" alt="pokemon-font" border="0"></a>
+  
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+          <li class="text-white nav-item">
+            <a class="nav-link" href="{% url 'index' %}" style="font-size: 30px; font-weight:bold"><a href="{% url 'index' %}"><img src="https://fontmeme.com/permalink/211209/c140174da72f7d24f9d24430c3eccc1a.png" alt="pokemon-font" border="0"></a></a>
+          </li>
+          
+        </li>
+        {% if user.is_authenticated %}
+        
+        {% endif %}
+      
+        </ul>
+       
+      <!-- Links -->
+      
+      {% if user.is_authenticated %}
+          <!-- <form class="form-inline" action="{% url 'search_results' %}">
+            <div class="md-form my-1">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="keyword">
+            </div>
+          </form> -->
+          {% endif %}
+          <div class="mt-2 my-1">
+              <ul> <li style="list-style: none;"><a href="/admin"><i></i><span><img src="https://fontmeme.com/permalink/211209/99870c50b32e955bd8d7aa10a94b5d09.png" alt="pokemon-font" border="0"></a></span></a></li></ul>
+          </div>
+          <div class="col-sm-6 col-lg-6 d-flex justify-content-end">
+              {% if user.is_authenticated %}
+              <!-- <ul>
+                <li class="nav-item">
+                  <a class="nav-link btn btn-block text-white success-color-dark" href="{%url 'new-project'%}">SUBMIT YOUR WEBSITE </a>
+                </li>
+              </ul> -->
+              
+              <ul>
+                
+                <li class="dropdown list-unstyled text-white">
+
+                    <!-- <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  -->
+                   
+                   
+                      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="https://fontmeme.com/permalink/211209/5a4501cac2090550806dce0030ab9802.png" alt="pokemon-font" border="0"></a>
+                  
+                  <ul class="dropdown-menu dropdown-default" role="menu">
+                    <li>
+                        <a class="dropdown-item" href="{%url 'profile'%}">Profile</a>
+                      </li>
+                    <li>
+                      <a class="dropdown-item" href="/accounts/password/change">Change Password</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/logout">Logout</a>
+                    </li>
+                  </ul>
+                </li> 
+
+                <!-- <li class="dropdown">
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle user-action">
+                      <img src="{{user.profile.profile_pic.url }}" class="avatar"
+                          alt="Avatar"
+                          onerror="this.src='https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-High-Quality-Image.png'" style="color:white">
+
+                      {{user.username}}<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="{% url 'profile' %}"><i class="fa fa-user-o"></i> Profile</a></li>
+                      <li><a href="#"><i class="fa fa-sliders"></i> Account settings</a></li>
+                      <li class="divider"></li>
+                      {% if user.is_authenticated %}
+                      <li><a href="/logout"><i class="material-icons">&#xE8AC;</i> Signout</a></li>
+                      {% endif %}
+                  </ul>
+              </li> -->
+              
+              </ul>
+              {% else %}
+              <li class="list-unstyled">
+                  <a class='btn btn-sm btn-default font-weight-bold' href="/accounts/login" style="font-size: 15px;">Login</a>
+                  <a class='btn btn-sm btn-default font-weight-bold' href="/accounts/register"style="font-size: 15px;">Register</a>
+              </li>
+
+              {% endif %}
+        </div>
+
+    </div>
+    <!-- Collapsible content -->
+  </div>
+  </nav>
+
+
+  <!--/Navbar-->
+

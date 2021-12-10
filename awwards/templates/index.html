@@ -1,0 +1,121 @@
+{%extends 'layout.html'%}
+
+
+{% block content %}
+
+<div style="background:url('https://source.unsplash.com/user/erondu'); height: 70vh; background-size: cover; background-position: center;"> 
+
+  <div id="intro">
+      
+      <div class="mask rgba-black-strong" style="height: 70vh;">
+
+          <div class="container-fluid d-flex align-items-center justify-content-center h-50">
+
+              <div class="row d-flex justify-content-center text-center">
+
+                  <div class="col-lg-12 pt-5 mt-5">
+
+                      <!-- Heading -->
+                      <h3 class="display-4 font-weight-bold white-text pt-5"><a href=""><img src="https://fontmeme.com/permalink/211209/b5035e39de4fb6521f238c6dbbfa556c.png" alt="pokemon-font" border="0"></a></h3>
+
+                      {% if user.is_authenticated %}
+                      <!-- <div class="text-center">
+                        <form class="form-inline" action="{% url 'search_results' %}">
+                          <div class="md-form my-1">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="keyword">
+                          </div>
+                        </form>
+
+                      </div> -->
+
+                      <div class="container-fluid mb-4" style="width: 600px;">
+                        <form class="d-flex" action="{% url 'search_results' %}" >
+                          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="keyword" style="border-radius: 50px;">
+                        </form>
+                      </div>
+                      {% endif %}
+
+                      <!-- Divider -->
+                      <!-- <hr class="hr-light"> -->
+                      <div class="container">
+                          <p class="font-weight-bold white-text" style="font-size: 30px;">This web application will allow a user to post a project he/she has created and got it reviewed by his/her peers.</p>
+                      </div>
+                      {% if user.is_authenticated %}
+                       <div class="container" style="margin-top: 2em;">
+                       <a href="{%url 'new-project'%}"><img src="https://fontmeme.com/permalink/211209/f6d6e42552dddfa83e7fb61d0c71dd79.png" alt="naruto-font" border="0"></a>
+                      </div>
+                        {% else %}
+                            <a class='btn btn-sm btn-default font-weight-bold' href="/accounts/login" style="font-size: 15px;">Login</a>
+                            <a class='btn btn-sm btn-default font-weight-bold' href="/accounts/register"style="font-size: 15px;">Register</a>
+                        {% endif %}
+                  </div>
+
+              </div>
+
+          </div>
+
+      </div>
+
+  </div>
+
+
+</div>
+<div class="pt-4 mt-4"></div>
+
+<!-- end of landing layout -->
+<div class="container-fluid">
+  <div class="mb-2 pb-2 pl-4 pr-2 ml-4 mr-1 text-center">
+      <h4 class="display-6 font-weight-bold" style="font-size:40px;"><img src="https://fontmeme.com/permalink/211209/7d9eabd8ca1999fa23c1ea04d290ae8f.png" alt="pokemon-font" border="0"></h4>
+  </div>
+
+    <div class="row pl-2 pr-2 ml-1 mr-1">
+        {% for project_item in projects %}
+            <div class="col-lg-4 ">
+                <div class="card-deck ">
+                
+                    <div class="card mb-2 mt-2 bg-info">
+                      <!-- Card image -->
+                    <div class="view overlay zoom">
+                        {% if project_item.project_image %}
+                        <a href="/project/{{project_item.id}}">
+                        <img class="card-img-top" src="{{project_item.project_image.url}}" alt="{{ project_item.project_name }}" height="300px">
+                        </a>
+                        {% else %}
+                        <a href="/project/{{project_item.id}}">
+                        <img  class="card-img-top" src="https://source.unsplash.com/1600x900/?fun,vacation" alt="{{ project_item.project_name }}">
+                        </a>
+                        {% endif %}
+                        
+                        <a href="/project/{{project_item.id}}">
+                          <div class="mask rgba-black-light">
+                             
+                          </div>
+                        </a>
+                      </div>
+                
+                      <div class="card-body pr-2 pl-2 pr-2 mr-2">
+                        <h5 class="card-title ml-4">{{ project_item.project_title }}</h5>
+                        <div class="row ml-2">
+                          <div class="col-lg-6 dark-text"> <small> <span class="mr-1"> From {{project_item.country.name}}</span> <img src="{{project_item.country.flag}}" alt=" {{project_item.country.name}} flag">  </small> </div>
+                          <div class="col-lg-6 dark-text d-flex justify-content-end"> <small> {{project_item.pub_date|date:"d /m/Y"}} </small> </div>
+                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <small class="text-muted ml-2"><img src="{{ project_item.Author.profile.photo.url }}" alt="" class="rounded-circle img-fluid mr-1" style="width: 30px;">
+                        BY {{project_item.Author.first_name|upper}} </small>
+                      </div>
+                    </div>
+                  
+                
+                  </div>
+                <!-- end of card deck  -->
+
+            </div>
+      {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+
+
+
