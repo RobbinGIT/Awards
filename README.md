@@ -10,3 +10,7 @@ Instagram clone using python django with a lot of Instagram features.
 - Password Reset using email.
 - Posting Images.
 - Like and comment on a post.
+
+## Admin Dashboard
+
+[Admin Dashboard Login](https://awardsrev254.herokuapp.com/admin/)  with credentials
