@@ -49,3 +49,25 @@ python manage.py createsuper
 ```
 python manage.py runserver
 ```
+- Open the app at `localhost:8000` or `http://127.0.0.1:8000/`
+
+## TECHNOLOGIES USED 
+* [Python3.8](https://www.python.org/)
+* [Django](https://docs.djangoproject.com)
+* [Heroku](https://heroku.com)
+* HTML - For building Mark Up pages/User Interface
+* CSS - For Styling User Interface
+
+## LIVE LINK
+https://https://awardsrev254.herokuapp.com/
+
+## Contact Me 
+### RobbinGit
+[Gmail](robbingithimbo@gmail.com)
+[Github](https://github.com/RobbinGIT)
+
+## LICENSE 
+
+This project is licensed under the MIT License - see the ## License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) file for details
