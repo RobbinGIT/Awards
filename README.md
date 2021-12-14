@@ -59,7 +59,7 @@ python manage.py runserver
 * CSS - For Styling User Interface
 
 ## LIVE LINK
-https://https://awardsrev254.herokuapp.com/
+https://awardsrev254.herokuapp.com/
 
 ## Contact Me 
 ### RobbinGit
