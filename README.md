@@ -23,3 +23,15 @@ Instagram clone using python django with a lot of Instagram features.
 ```
 pip install -r requiremnts.txt
 ```
+
+### Usage
+- Create a ``.env`` file.
+- Declare following environment variables in the .env file.
+```
+> SECRET_KEY = 'secret key'
+> DEBUG = True
+> EMAIL_USERNAME = 'your email address'
+> EMAIL_PASSWORD = 'your password' 
+```
+- Now make the migrations.
+```
